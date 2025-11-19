@@ -16,7 +16,7 @@ a{
 
 #header{
 
-  background-color: rgb(255, 0, 0);
+  background-color: transparent;
   display: flex;
   height: 70px;
   padding: 1rem;
@@ -26,6 +26,7 @@ a{
 
 
 #menu{
+  
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -42,6 +43,12 @@ a{
 
 #mobo-btn{
   display: none;
+}
+
+header nav ul li a {
+    color: #F0EAD6;
+    font-weight: bold;
+    
 }
 
 @media (max-width: 798px) {

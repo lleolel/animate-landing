@@ -1,22 +1,80 @@
 
-
-h1{
-  margin-top: 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(78, 0, 0);
+body{
+  background-color: red;
 }
 
 
-container-principal{
-    position: relative; 
+.container-principal{
+  background-image: url(img/u1722962929_Basketball_court_at_night_from_the_side_a_single__b0aa50bb-c61c-4e0e-9d3f-8dc080d45cd7_0.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+}
+
+  :root {
+    --creme-sola: #F0EAD6;
+    --verde-escuro-bg: #1A2E26;
+    --laranja-tag: #FF5E1F;
+  }
+
+
+
+.intro-teaser{
+  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;     
+    text-align: center;
+    background-color: var(--verde-escuro-bg); 
+    color: var(--cor-creme);
+    overflow: hidden;
+}
+
+.intro-headline {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+
+.intro-headline .word {
+    display: inline-block; 
+    margin-right: 0.3em;
+    margin-bottom: 120px;
+}
+
+
+.intro-subtitle {
+    font-size: 20px;
+    color: var(--laranja-tag);
+}
+
+
+.scroll-down{
+  color: var(--creme-sola);
 }
 
 
 
-h1{
+h1{ 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
-  align-self: center;
   justify-content: center;
+  align-items: center;
+  color: var(--creme-sola);
+  font-weight: 900;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--creme-sola);
+  font-weight: 900;
 }
 
 .jogador{
@@ -25,38 +83,82 @@ h1{
 }
 
 .jogador img:nth-child(1){
-  margin-left: 410px;
-  margin-top: 320px;
+  margin-left: 720px;
+  margin-top: 300px;
 }
 
 .jogador img{
   width: 220px;
   height: 220px;
-  margin-left: 100px;
+  margin-left: -190px;
   margin-top: 200px;
   
 }
 
-.jogador img:nth-child(2){
+#jogadorImg{
 
-   position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 161px;
-    left: 422px; 
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 20px;
+position: absolute;
+width: 20px;
+margin-left: -110px;
 }
 
-.jogador img:nth-child(3){
-position: absolute;
-width: 150px;
-height: auto;
-top: -5px;
-left: -150px;
-display: block;
- 
+.sombra {
+    width: 120px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1px; 
+    left: 760px; 
+    filter: blur(5px); 
+    transform: scale(1);
+}
+
+.placar-container {
+    text-align: center;
+    margin-top: 10px;
+    position: relative; 
+}
+
+.placar-container h2 {
+    color: #F0EAD6; 
+    font-family: 'Impact', sans-serif; 
+    font-size: 40px;
+    text-shadow: 2px 2px 0px #000; 
+    letter-spacing: 2px;
+}
+
+#score {
+  color: #ff4800; 
+}
+
+h3{
+  color: aliceblue;
+}
+
+
+#mensagem-vitoria {
+    background-color: #FF5E1F;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    box-shadow: 0 0 30px rgba(255, 94, 31, 0.8);
+    display: none; 
+}
+
+.secao-transicao img{
+  width: 120px;
+  height: 120px;
+}
+
+.secao-transicao :nth-child (2){
+
+  
 }
 
 

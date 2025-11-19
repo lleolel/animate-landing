@@ -1,45 +1,117 @@
-const jogador = document.querySelector('.jogador');
-const bola = document.querySelector('.jogador img:nth-child(2)');
 
-const cestaX = -800; 
-const cestaY = -200; 
-const duracaoArremesso = 2.5;
+const jogador = document.getElementById('bolaImg');
+const bola = document.getElementById('jogadorImg')
+const scoreElement = document.getElementById('score');
+const mensagemVitoria = document.getElementById('mensagem-vitoria');
 
-function arremessar() {  
+const cestaX = -980; 
+const cestaY = -400; 
+const duracaoArremesso = 2.0;
+let pontos = 0;
+let arremessando = false; 
+
+
+function arremessar() {
+    
+    if (arremessando) return;
+    arremessando = true;
+
+
+    if(mensagemVitoria) gsap.set(mensagemVitoria, { display: "none" });
+
     const tl = gsap.timeline({
-        paused: true, 
-        onComplete: resetarPosicao 
+        onComplete: resetarPosicao
     });
 
+   
     tl.to(jogador, {
-        y: -10, 
+        y: -50,
         duration: 0.3,
         ease: "power2.out",
-    }, 0) 
-    .to(jogador, {
-        y: 0, 
-        duration: 0.4,
-        ease: "power2.in"
-    }, 0.3) 
+        yoyo: true,
+        repeat: 1
+    }, 0);
 
-    tl.to(bola, {
-        physics2D: {
-            velocity: 600,
-            angle: -70, 
-            gravity: 1000 
+
+    tl.fromTo(bola, 
+        {
+          
+            opacity: 1,
+            scale: 1,
+            x: 0,
+            y: 0,
+            rotation: 0
         },
-        x: cestaX, 
-        y: cestaY, 
-        duration: duracaoArremesso,
-        ease: "none", 
-    }, 0);    
-    tl.play();
+        {
+            
+            physics2D: {
+                velocity: 600,
+                angle: -75,
+                gravity: 1200
+            },
+            x: cestaX,
+            y: cestaY,
+            rotation: -720,
+            scale: 0, 
+            opacity: 0, 
+            duration: duracaoArremesso,
+            ease: "none"
+        }, 
+        0
+    );
 }
+
+
 function resetarPosicao() {
-    gsap.set(bola, { x: 0, y: 0 }); 
+    
+    if(scoreElement) {
+        pontos++;
+        scoreElement.innerText = pontos;
+
+       
+        if (pontos === 3 && mensagemVitoria) {
+            gsap.to(mensagemVitoria, {
+                display: "block",
+                scale: 1,
+                opacity: 1,
+                duration: 0.5,
+                ease: "back.out(1.7)"
+            });
+        
+            pontos = 0;
+            scoreElement.innerText = 0;
+        }
+    }
+
+   //reset bola
+    gsap.set(bola, { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 });
+    
+
+    arremessando = false;
 }
 
+//jogar
+if(jogador) {
+    jogador.addEventListener('click', arremessar);
+} else {
+    console.error("ERRO: Não encontrei o elemento .jogador no HTML");
+}
 
-jogador.addEventListener('click', arremessar);
+//efeito de aparecer o texto
+gsap.from(".intro-headline .word", { 
+    y: 50,             //valor abaixo da posicao final
+    opacity: 0,         // comeca invisivel e vai aparecendo k
+    duration: 0.8,      // duracao da animation de cada p
+    stagger: 0.15,      
+    ease: "power2.out"  // velocidade no final
+});
 
-
+// Animação da seta
+gsap.to(".scroll-down", {
+    y: 10,
+    opacity: 0.5,
+    duration: 1, // tempo
+    ease: "power1.inOut",
+    repeat: -1, // infinito
+    yoyo: true  // pulinho da seta 
+});
