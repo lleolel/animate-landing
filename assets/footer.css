@@ -1,9 +1,11 @@
+<script src="https://unpkg.com/feather-icons"></script>
+
 *{
   letter-spacing: 1px;
   font-family: var(--fonte-secundaria);
   color: var(--cor-texto-claro);
-
 }
+
 main{
   height: 80vh;
 }
@@ -13,17 +15,28 @@ footer {
 }
 
 
+#footer_social_media .footer-link svg {
+  stroke: white;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
 
 #footer_content{
     background-color: red;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 3rem 3.5rem;
-  }
+    font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
 
 #footer_contacts p{
+  color: white;
   margin-bottom: 20px;
   font-size: 20px;
+  font-weight: 700;
 }
 
 #footer_social_media{
