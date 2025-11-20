@@ -1,0 +1,152 @@
+*{
+  letter-spacing: 1px;
+  font-family: var(--fonte-secundaria);
+  color: var(--cor-texto-claro);
+
+}
+main{
+  height: 80vh;
+}
+
+footer {
+  width: 100%;
+}
+
+
+
+#footer_content{
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+  }
+
+#footer_contacts p{
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+#footer_social_media{
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+#footer_social_media .footer-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--cor-fundo-principal);
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+#footer_social_media .footer-link:hover {
+  opacity: 0.8;
+}
+#instagram{
+  background: linear-gradient(#7f37C9,#FF2002, #ff9807);
+}
+
+#github{
+  background-color: #333333;
+  color: white;
+}
+
+#linkedin{
+  background-color: #0A66C2;
+  color: #F3F2EE;
+}
+
+.listy{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listy .footer-link{
+transition: all 0.4s;
+
+}
+
+.listy .footer-link:hover{
+color: var(--cor-texto-hover)
+}
+ 
+#footer_subscribe{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 50px;
+}
+
+#footer_subscribe h3{
+  margin-bottom: 15px;
+}
+
+#input_group{
+  display: flex;
+  align-items: center;
+  border-radius: 4%;
+}
+
+#input_group input{
+  all: unset; 
+  background-color: #fff8f8a8;
+  color: black;
+  padding: 0.75rem;
+  width: 200px;
+}
+
+#input_group button{
+  background-color: #000000;
+  border: none;
+  color: var(--cor-texto-hover);
+  padding: 0px 1.25rem;
+  font-size: 1.125rem;
+  height: 100%;
+  border-radius: 0px 4px 4px 0px;
+  cursor: pointer;
+}
+
+#input_group button:hover{
+  opacity: 0.8;
+}
+
+#footer_copy{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid;
+  padding-block: 1.5rem;
+  font-weight: 100;
+  background-color: #1A2E26;
+  color: antiquewhite;
+}
+
+@media screen and (max-width: 834px){
+
+  #footer_content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  #footer_copy{
+    padding-left: 110px;
+  }
+}
+  @media screen and (max-width: 834px){
+
+  #footer_content {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 3rem 2rem;
+  }
+
+
+  #footer_copy{
+    padding-left: 10px;
+  }
+
+}
