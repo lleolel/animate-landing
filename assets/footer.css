@@ -31,6 +31,13 @@ footer {
     color: black;
 }
 
+.listy{
+  font-weight: 500;
+}
+
+#footer .sub{
+  font-weight: 500;
+}
 
 #footer_contacts p{
   color: white;
